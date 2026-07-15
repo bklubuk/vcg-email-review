@@ -16,6 +16,7 @@ nav{width:250px;background:#fff;border-right:1px solid var(--line);padding:10px;
 .navbtn.active{background:#eafaf3;box-shadow:inset 0 0 0 1px var(--mint);}
 .navbtn .n{font-weight:800;color:var(--navy);width:22px;}
 .navbtn .l{flex:1;line-height:1.3;}
+.navbtn .star{color:#ffc21f;font-size:12px;width:12px;}
 .navbtn .badge{font-size:9px;font-weight:700;color:#c99700;letter-spacing:.5px;}
 main{flex:1;display:flex;flex-direction:column;align-items:center;padding:28px 16px 60px;overflow:auto;}
 .title{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 4px;}
@@ -47,11 +48,10 @@ iframe{border:0;display:block;background:#fff;}
 </div>
 </header>
 <div class="layout">
-<nav><button class="navbtn" data-tpl="01" onclick="pick('01')"><span class="n">01</span><span class="l">Payment Alert</span></button><button class="navbtn" data-tpl="02" onclick="pick('02')"><span class="n">02</span><span class="l">Clawback</span></button><button class="navbtn" data-tpl="03" onclick="pick('03')"><span class="n">03</span><span class="l">Legal</span></button><button class="navbtn" data-tpl="04" onclick="pick('04')"><span class="n">04</span><span class="l">Syndication</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="05" onclick="pick('05')"><span class="n">05</span><span class="l">Wiring</span></button><button class="navbtn" data-tpl="06" onclick="pick('06')"><span class="n">06</span><span class="l">Renewal</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="07" onclick="pick('07')"><span class="n">07</span><span class="l">Blog — Consolidation Scams</span></button><button class="navbtn" data-tpl="08" onclick="pick('08')"><span class="n">08</span><span class="l">Series 1 — Real Case Warning</span></button><button class="navbtn" data-tpl="09" onclick="pick('09')"><span class="n">09</span><span class="l">Series 2 — How It Works</span></button><button class="navbtn" data-tpl="10" onclick="pick('10')"><span class="n">10</span><span class="l">Series 3 — Red Flags</span></button><button class="navbtn" data-tpl="11" onclick="pick('11')"><span class="n">11</span><span class="l">Series 4 — What The Law Says</span></button><button class="navbtn" data-tpl="12" onclick="pick('12')"><span class="n">12</span><span class="l">Series 5 — Right Way To Relief</span><span class="badge">★ review</span></button></nav>
+<nav><button class="navbtn" data-tpl="01" onclick="pick('01')"><span class="star">&#9733;</span><span class="n">01</span><span class="l">Payment Alert</span></button><button class="navbtn" data-tpl="02" onclick="pick('02')"><span class="star">&#9733;</span><span class="n">02</span><span class="l">Clawback</span></button><button class="navbtn" data-tpl="03" onclick="pick('03')"><span class="star">&#9733;</span><span class="n">03</span><span class="l">Legal</span></button><button class="navbtn" data-tpl="04" onclick="pick('04')"><span class="star">&#9733;</span><span class="n">04</span><span class="l">Syndication</span></button><button class="navbtn" data-tpl="05" onclick="pick('05')"><span class="star">&#9733;</span><span class="n">05</span><span class="l">Wiring</span></button><button class="navbtn" data-tpl="06" onclick="pick('06')"><span class="star">&#9733;</span><span class="n">06</span><span class="l">Renewal</span></button><button class="navbtn" data-tpl="07" onclick="pick('07')"><span class="star">&#9733;</span><span class="n">07</span><span class="l">Blog — Consolidation Scams</span></button><button class="navbtn" data-tpl="08" onclick="pick('08')"><span class="star">&#9733;</span><span class="n">08</span><span class="l">Series 1 — Real Case Warning</span></button><button class="navbtn" data-tpl="09" onclick="pick('09')"><span class="star">&#9733;</span><span class="n">09</span><span class="l">Series 2 — How It Works</span></button><button class="navbtn" data-tpl="10" onclick="pick('10')"><span class="star">&#9733;</span><span class="n">10</span><span class="l">Series 3 — Red Flags</span></button><button class="navbtn" data-tpl="11" onclick="pick('11')"><span class="star">&#9733;</span><span class="n">11</span><span class="l">Series 4 — What The Law Says</span></button><button class="navbtn" data-tpl="12" onclick="pick('12')"><span class="star">&#9733;</span><span class="n">12</span><span class="l">Series 5 — Right Way To Relief</span></button></nav>
 <main>
 <div class="title" id="tTitle"></div>
 <div class="sub" id="tSub"></div>
-<div class="frame" id="frame"><div class="screen"><iframe id="view" title="preview"></iframe></div></div>
 <div class="cbox">
 <div class="ceyebrow">FEEDBACK</div>
 <h3>Comments on <span id="cTplName">this template</span></h3>
@@ -65,6 +65,7 @@ iframe{border:0;display:block;background:#fff;}
 <div class="status" id="cStatus"></div>
 </div>
 </div>
+<div class="frame" id="frame"><div class="screen"><iframe id="view" title="preview"></iframe></div></div>
 <div class="hint">Non-responsive emails (01–05) are fixed at 600px and shown scaled-to-fit on tablet/mobile, mimicking how a mail client downscales them. 06–12 use responsive media queries.</div>
 </main>
 </div>
