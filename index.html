@@ -10,7 +10,8 @@ header .eyebrow{color:var(--mint);font-size:11px;font-weight:700;letter-spacing:
 .devtoggle button{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.25);padding:7px 13px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;margin-left:6px;}
 .devtoggle button.active{background:var(--mint);color:var(--navy);border-color:var(--mint);}
 .layout{display:flex;min-height:calc(100vh - 56px);}
-nav{width:250px;background:#fff;border-right:1px solid var(--line);padding:10px;overflow:auto;position:sticky;top:56px;height:calc(100vh - 56px);}
+nav{width:250px;background:#fff;border-right:1px solid var(--line);padding:10px;overflow:auto;position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;}
+.navlist{flex:1;overflow:auto;}
 .navbtn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;cursor:pointer;color:var(--ink);font-size:13px;}
 .navbtn:hover{background:#f4f7fb;}
 .navbtn.active{background:#eafaf3;box-shadow:inset 0 0 0 1px var(--mint);}
@@ -24,6 +25,18 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;padding:28px 1
 .frame .screen{overflow:hidden;border-radius:12px;background:#fff;}
 iframe{border:0;display:block;background:#fff;}
 .hint{font-size:11px;color:#8a93a3;margin-top:14px;text-align:center;max-width:520px;}
+/* comment panel */
+.cbox{width:100%;max-width:640px;margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 26px rgba(20,34,79,.10);padding:20px 22px;}
+.cbox .ceyebrow{color:#c99700;font-size:11px;font-weight:700;letter-spacing:2px;}
+.cbox h3{margin:4px 0 12px;font-size:15px;color:var(--navy);}
+.cbox textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:13.5px;resize:vertical;}
+.cbox input{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:13.5px;margin-top:10px;}
+.cbox .row{display:flex;align-items:center;gap:12px;margin-top:14px;}
+.cbox button{background:var(--mint);color:var(--navy);border:0;border-radius:22px;padding:11px 26px;font-size:13.5px;font-weight:700;cursor:pointer;}
+.cbox button:disabled{opacity:.5;cursor:default;}
+.cbox .status{font-size:12.5px;}
+.cbox .status.ok{color:#0c9c68;font-weight:600;}
+.cbox .status.err{color:#d83c34;font-weight:600;}
 </style></head><body>
 <header>
 <div><div class="eyebrow">Velocity Capital Group</div><h1>Email Suite — 12 Templates for Review</h1></div>
@@ -35,11 +48,21 @@ iframe{border:0;display:block;background:#fff;}
 </div>
 </header>
 <div class="layout">
-<nav><button class="navbtn" data-tpl="01" onclick="pick('01')"><span class="n">01</span><span class="l">Payment Alert</span></button><button class="navbtn" data-tpl="02" onclick="pick('02')"><span class="n">02</span><span class="l">Clawback</span></button><button class="navbtn" data-tpl="03" onclick="pick('03')"><span class="n">03</span><span class="l">Legal</span></button><button class="navbtn" data-tpl="04" onclick="pick('04')"><span class="n">04</span><span class="l">Syndication</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="05" onclick="pick('05')"><span class="n">05</span><span class="l">Wiring</span></button><button class="navbtn" data-tpl="06" onclick="pick('06')"><span class="n">06</span><span class="l">Renewal</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="07" onclick="pick('07')"><span class="n">07</span><span class="l">Blog — Consolidation Scams</span></button><button class="navbtn" data-tpl="08" onclick="pick('08')"><span class="n">08</span><span class="l">Series 1 — Real Case Warning</span></button><button class="navbtn" data-tpl="09" onclick="pick('09')"><span class="n">09</span><span class="l">Series 2 — How It Works</span></button><button class="navbtn" data-tpl="10" onclick="pick('10')"><span class="n">10</span><span class="l">Series 3 — Red Flags</span></button><button class="navbtn" data-tpl="11" onclick="pick('11')"><span class="n">11</span><span class="l">Series 4 — What The Law Says</span></button><button class="navbtn" data-tpl="12" onclick="pick('12')"><span class="n">12</span><span class="l">Series 5 — Right Way To Relief</span><span class="badge">★ review</span></button></nav>
+<nav><div class="navlist"><button class="navbtn" data-tpl="01" onclick="pick('01')"><span class="n">01</span><span class="l">Payment Alert</span></button><button class="navbtn" data-tpl="02" onclick="pick('02')"><span class="n">02</span><span class="l">Clawback</span></button><button class="navbtn" data-tpl="03" onclick="pick('03')"><span class="n">03</span><span class="l">Legal</span></button><button class="navbtn" data-tpl="04" onclick="pick('04')"><span class="n">04</span><span class="l">Syndication</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="05" onclick="pick('05')"><span class="n">05</span><span class="l">Wiring</span></button><button class="navbtn" data-tpl="06" onclick="pick('06')"><span class="n">06</span><span class="l">Renewal</span><span class="badge">★ review</span></button><button class="navbtn" data-tpl="07" onclick="pick('07')"><span class="n">07</span><span class="l">Blog — Consolidation Scams</span></button><button class="navbtn" data-tpl="08" onclick="pick('08')"><span class="n">08</span><span class="l">Series 1 — Real Case Warning</span></button><button class="navbtn" data-tpl="09" onclick="pick('09')"><span class="n">09</span><span class="l">Series 2 — How It Works</span></button><button class="navbtn" data-tpl="10" onclick="pick('10')"><span class="n">10</span><span class="l">Series 3 — Red Flags</span></button><button class="navbtn" data-tpl="11" onclick="pick('11')"><span class="n">11</span><span class="l">Series 4 — What The Law Says</span></button><button class="navbtn" data-tpl="12" onclick="pick('12')"><span class="n">12</span><span class="l">Series 5 — Right Way To Relief</span><span class="badge">★ review</span></button></div></nav>
 <main>
 <div class="title" id="tTitle"></div>
 <div class="sub" id="tSub"></div>
 <div class="frame" id="frame"><div class="screen"><iframe id="view" title="preview"></iframe></div></div>
+<div class="cbox">
+<div class="ceyebrow">FEEDBACK</div>
+<h3>Comments on <span id="cTplName">this template</span></h3>
+<textarea id="cText" placeholder="What should change? (section, issue, suggestion)"></textarea>
+<input id="cEmail" type="email" placeholder="Your email">
+<div class="row">
+<button id="cSend" onclick="sendComment()">Send &nbsp;&rarr;</button>
+<div class="status" id="cStatus"></div>
+</div>
+</div>
 <div class="hint">Non-responsive emails (01–05) are fixed at 600px and shown scaled-to-fit on tablet/mobile, mimicking how a mail client downscales them. 06–12 use responsive media queries.</div>
 </main>
 </div>
@@ -263,21 +286,18 @@ var META={"01": {"label": "Payment Alert", "rev": "no"}, "02": {"label": "Clawba
 var DEV={desktop:{w:680,scale:1},tablet:{w:600,scale:1},mobile:{w:390,scale:390/600}};
 var EMAILW=600, cur="01", dev="desktop";
 function loadTpl(num){
-  var src=document.getElementById('tpl-'+num).textContent;
   var f=document.getElementById('view');
-  f.srcdoc=src;
+  f.srcdoc=document.getElementById('tpl-'+num).textContent;
 }
 function applyDev(){
   var d=DEV[dev], f=document.getElementById('view'), frame=document.getElementById('frame');
   f.style.width=EMAILW+'px';
   f.style.transform='scale('+d.scale+')';
   f.style.transformOrigin='top left';
-  // frame + screen sized to scaled email width
   var shownW=Math.round(EMAILW*d.scale);
   frame.style.width=(shownW+28)+'px';
   var screen=frame.querySelector('.screen');
   screen.style.width=shownW+'px';
-  // set a tall height; scale it too
   f.style.height='1600px';
   screen.style.height=Math.round(1600*d.scale)+'px';
 }
@@ -286,12 +306,47 @@ function pick(num){
   document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.tpl===num));
   document.getElementById('tTitle').textContent=num+' · '+META[num].label;
   document.getElementById('tSub').textContent=(META[num].rev==='yes'?'Includes review strip · ':'')+'Track-record collage · fluid tables';
+  document.getElementById('cTplName').textContent=num+' · '+META[num].label;
   loadTpl(num); applyDev();
-  // re-fit height once iframe renders
   var f=document.getElementById('view');
   f.onload=function(){try{var h=f.contentDocument.body.scrollHeight+40;f.style.height=h+'px';f.parentNode.style.height=Math.round(h*DEV[dev].scale)+'px';}catch(e){}};
 }
 function setDev(d,btn){dev=d;document.querySelectorAll('.devtoggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');pick(cur);}
+function sendComment(){
+  var txt=document.getElementById('cText').value.trim();
+  var em=document.getElementById('cEmail').value.trim();
+  var st=document.getElementById('cStatus');
+  var btn=document.getElementById('cSend');
+  if(!txt){st.className='status err';st.textContent='Please write a comment.';return;}
+  if(!em||em.indexOf('@')<1){st.className='status err';st.textContent='Please enter your email.';return;}
+  btn.disabled=true;st.className='status';st.textContent='Sending…';
+  var tpl=cur+' · '+META[cur].label;
+  var body=txt+"\n\nFrom: "+em;
+  fetch('https://formsubmit.co/ajax/bogdan@velocitycg.com',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject:'Template feedback — '+tpl,
+      Comment:txt,
+      Email:em,
+      Template:tpl,
+      Device:dev,
+      _template:'box'
+    })
+  }).then(function(r){return r.json();}).then(function(j){
+    if(j&&(j.success==='true'||j.success===true)){
+      st.className='status ok';st.textContent='Sent — thank you!';
+      document.getElementById('cText').value='';
+    }else{throw new Error('relay');}
+    btn.disabled=false;
+  }).catch(function(){
+    // fallback: open the reviewer's mail client prefilled
+    var mailto='mailto:bogdan@velocitycg.com?subject='+encodeURIComponent('Template feedback — '+tpl)+'&body='+encodeURIComponent(body);
+    window.location.href=mailto;
+    st.className='status';st.textContent='Opened your mail app as a fallback.';
+    btn.disabled=false;
+  });
+}
 pick('01');
 </script>
 </body></html>
